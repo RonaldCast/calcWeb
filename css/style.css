@@ -1,0 +1,246 @@
+
+
+@font-face{
+    font-family: "Roboto-Regular";
+    src: url("../fonts/Roboto-Regular.ttf");
+    src: url("../fonts/Roboto-Regular.ttf") format(truetype);
+}
+
+@font-face {
+    font-family: "Gabriola";
+    src: url("../fonts/gabriola.ttf");
+    src: url("../fonts/gabriola.ttf") format(truetype);
+}
+
+*,body,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --linear-gradient: linear-gradient(135deg, #f02fc2 0%, #6b8ce6 100%);
+    --linear-gradient--body: linear-gradient(rgba(224, 224, 224, 0.60) 0%, rgba(159, 159, 159, 0.6) 100%);
+    --color-calc--btn: rgba(192, 190, 190, .53);
+    --color-calc--history--font: rgba(15, 13, 14, .52);
+    --color-calc--btn-hover: rgba(192, 190, 190, .8);
+    --color-calc--font: rgb(38, 33, 33,0.59);
+    --color-calc--history--scroll-thumb: rgb(38, 33, 33,0.2);
+    --color-calc--history--scroll: rgb(38, 33, 33,0.1);
+    --color-calc--header-font: #E13390;
+    --color-calc--header: rgba(255, 255, 255, .75);
+    --color-calc--history--border: rgba(173, 171, 171, .87);
+    --color-calc--history--datail: rgb(132, 127, 127);
+    --color-calc--btn-number: rgba(217, 216, 216, .56);
+    --color-calc--btn-number-hover: rgba(217, 216, 216, .8);
+    --box-shadow--calc:0px 2px 4px 0px rgba(15, 13, 14, 0.75);
+    --color-history--body: rgba(218, 211, 211, .83);
+    --color-calc--history--results: #000000
+}
+
+/* style calc-container */
+main.main-container {
+    height: 100vh;
+    background: var(--linear-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* style calculator */
+div.calc-container{
+    background:var(--linear-gradient--body);
+    width: 350px;
+    height: 450px;
+    border-radius: 7px;
+    box-shadow: var(--box-shadow--calc);
+    overflow: hidden; 
+
+}
+
+header.calc-header{
+    font-family: "Gabriola";
+    background: var(--color-calc--header);
+    border-radius: 7px 7px 0px 0px;
+    padding: 10px 10px 5px 10px;
+    font-size: 1.25rem;
+    color: var(--color-calc--header-font);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+header.calc-header span{
+    align-self: center;
+    cursor: pointer;
+}
+
+div.calc-body > div{
+    position: relative;
+}
+
+div.calc-prompt{
+    width: 100%;
+    padding: 3px 13px 13px 13px;
+
+    text-align: right;
+    font-family: "Roboto-Regular";
+    color: var(--color-calc--font);
+
+}
+div.calc-prompt--md{
+     height: 16px;
+     font-size: 1rem;
+     /* overflow-x: auto ; */
+     overflow: hidden;
+}
+
+div.calc-prompt--lg{
+    font-size: 2rem;
+    padding-top: 2px;
+    overflow: hidden;
+}
+
+div.calc-btn--container{
+    display: flex;
+    width: 100%;
+    height: 329px;
+    flex-wrap: wrap;
+   justify-content: space-between;
+
+}
+
+/* calc-btn--container */
+div.calc-btn--container button{
+    background: var(--color-calc--btn);
+    color: var(--color-calc--font);
+    border: none;
+    font-family: "Roboto-Regular";
+    font-size: 1.5rem;
+    margin: 0.7px;
+    width: calc(87px - 1px);
+    height: calc(65.8px - 1px);
+    transition: background .2s ease;
+    outline: none;
+}
+
+div.calc-btn--container button:hover{
+    background: var( --color-calc--btn-hover);
+}
+div.calc-btn--container button.style-zero{
+    flex-grow: 2;
+    border-radius: 0px 0px 0px 7px;
+}
+div.calc-btn--container button:last-child{
+    border-radius: 0px 0px 7px 0px;
+}
+div.calc-btn--container button.style-num{
+    background: var(--color-calc--btn-number);
+ }
+
+ div.calc-btn--container button.style-num:hover{
+    background: var(--color-calc--btn-number-hover);
+ }
+
+
+ /* Start: History */
+
+ div.calc-history{
+     position: absolute;
+     background: var(--color-history--body);
+     width: 100%;
+     top:0;
+     bottom: 0;
+     left: 0;
+     border-radius: 0px 0px 7px 7px;
+     font-family: "Roboto-Regular";
+     transition: all .3s ease;
+ }
+
+ div.calc-history div.calc-history--header{
+    width: 90%;
+    margin:0 auto;
+    padding: 20px 0px 5px 0px;
+    font-size: 1.6rem;
+    color: var(--color-calc--history--font);
+    border-bottom: 1px solid var(--color-calc--history--border);
+    -webkit-box-shadow: -1px 6px 1px -4px var(--color-calc--history--border);
+    -moz-box-shadow: -1px 6px 1px -4px  var(--color-calc--history--border);;
+    box-shadow: -1px 6px 1px -4px  var(--color-calc--history--border);
+  
+ }
+
+ div.calc-history--container {
+     color: var(--color-calc--history--datail);
+     text-align: right;
+ }
+
+ div.calc-history--container div{
+    padding: 15px 20px 0px 20px;
+    font-size: 1.2rem;
+ }
+
+ div.calc-history--container div p:last-child{
+    color: var(--color-calc--history--results);
+ }
+
+
+ div.calc-history--container{
+    overflow-x: auto;
+    height: 300px;
+ }
+ footer.calc-history--footer{
+    padding: 10px;
+    text-align: right;
+    color: var(--color-calc--history--datail);
+    font-size: 1.2rem;
+    background: var(--color-calc--header);
+    border-radius:0px 0px 7px 7px;
+    -webkit-box-shadow: -1px -6px 5px -5px var(--color-calc--history--border);
+    -moz-box-shadow: -1px -6px 5px -5px var(--color-calc--history--border);
+    box-shadow: -1px -6px 5px -5px var(--color-calc--history--border);
+ }
+
+ div.calc-history--container::-webkit-scrollbar{
+    background: var(--color-calc--history--scroll);
+    border-radius: 10px;
+    width: 15px;
+
+ }
+
+ div.calc-history--container::-webkit-scrollbar-thumb{
+    background: var(--color-calc--history--scroll-thumb);
+    height: 10px;
+    border-radius: 10px;
+
+ }
+
+ footer.calc-history--footer > span{
+    margin-right: 20px; 
+    cursor: pointer;
+    transition: color .2s ease-in-out;
+ }
+
+ footer.calc-history--footer > span:hover{
+    color:var(--color-calc--history--results)
+ }
+
+ /* Class manipulation */
+
+ div.calc-history--translate-none{
+    -ms-transform: translateX(355px);
+   -webkit-transform: translateX(355px);
+   transform: translateX(355px); 
+}
+
+div.calc-history--translate-block{
+    -ms-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); 
+}
+
+
+
+
+

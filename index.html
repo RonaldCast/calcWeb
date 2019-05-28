@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>CalculatorWeb</title>
+</head>
+<body>
+
+
+    <main class="main-container">
+
+        <div class="calc-container">
+
+            <header class="calc-header">
+                <p>CalculatorWeb</p>
+                <span class="fa fa-history" id="viewhistory"></span>
+            </header>
+
+            <!-- Start: calc-body -->
+            <div class="calc-body">
+                <div>
+                    <div class="calc-prompt">
+                        <div class="calc-prompt--md">
+                            <p class="" id=""></p>
+                        </div>
+                        <div class="calc-prompt--lg">
+                            <p class="" id="">0</p>
+                        </div>
+                    </div>
+
+                    <!-- Start: calc-btn--container-->
+                    <div class="calc-btn--container">
+                        <button>CE</button>
+                        <button>C</button>
+                        <button><span class="fa fa-chevron-left"></span></button>
+                        <button>÷</button>
+                        <button class="style-num">7</button>
+                        <button class="style-num">8</button>
+                        <button class="style-num">9</button>
+                        <button>x</button>
+                        <button class="style-num">4</button>
+                        <button class="style-num">5</button>
+                        <button class="style-num">6</button>
+                        <button>-</button>
+                        <button class="style-num">1</button>
+                        <button class="style-num">2</button>
+                        <button class="style-num">3</button>
+                        <button>+</button>
+                        <button class="style-zero">0</button>
+                        <button>.</button>
+                        <button>=</button>
+                    </div>
+                    <!-- Start: calc-btn--container-->
+                    
+                    <!-- Start: History -->
+                    <div class="calc-history calc-history--translate-none">
+                        <div class="calc-history--header">
+                            <p>History</p>
+                        </div>
+                        
+                        <div class="calc-history--container">
+ 
+                        </div>
+                        <footer class="calc-history--footer">
+                            <span class="fa fa-trash"></span>
+                        </footer>
+
+                    </div>
+                    <!-- End: History -->
+                </div>
+            </div>
+            <!-- End: calc-body -->
+        </div>
+    </main>
+  
+    <script src="./js/translate.js"></script>
+    <script src="./js/calculator.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
